@@ -946,7 +946,7 @@ icmpcodes = {3: {0: "network-unreachable",
                   5: "need-authorization", }, }
 
 
-icmp_id_seq_types = [0, 8, 13, 14, 15, 16, 17, 18, 37, 38]
+icmp_id_seq_types = [0, 8, 13, 14, 15, 16, 17, 18, 37, 38, 42, 43]
 
 
 class ICMP(Packet):
@@ -972,7 +972,7 @@ class ICMP(Packet):
                            (IntField("unused", 0),
                                lambda pkt:pkt.type not in [0, 3, 5, 8, 11, 12,
                                                            13, 14, 15, 16, 17,
-                                                           18])
+                                                           18, 42, 43])
                        ], StrFixedLenField("unused", "", length=0)),
                    ]
 
